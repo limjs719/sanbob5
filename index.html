@@ -1,0 +1,100 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>날씨 정보</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌤️ 날씨 정보</h1>
+        </header>
+        
+        <div class="search-section">
+            <div class="input-container">
+                <input type="text" id="cityInput" placeholder="도시명을 입력하세요 (예: Seoul, Busan)" />
+                <div class="suggestions" id="suggestions" style="display: none;"></div>
+            </div>
+            <button id="searchBtn">검색</button>
+        </div>
+        
+        <div class="popular-cities">
+            <h3>인기 도시</h3>
+            <div class="city-buttons">
+                <button class="city-btn" data-city="Seoul">서울</button>
+                <button class="city-btn" data-city="Busan">부산</button>
+                <button class="city-btn" data-city="Incheon">인천</button>
+                <button class="city-btn" data-city="Daegu">대구</button>
+                <button class="city-btn" data-city="Daejeon">대전</button>
+                <button class="city-btn" data-city="Gwangju">광주</button>
+                <button class="city-btn" data-city="Tokyo">도쿄</button>
+                <button class="city-btn" data-city="New York">뉴욕</button>
+                <button class="city-btn" data-city="London">런던</button>
+                <button class="city-btn" data-city="Paris">파리</button>
+            </div>
+        </div>
+        
+        <div class="weather-info" id="weatherInfo" style="display: none;">
+            <div class="current-weather">
+                <div class="weather-main">
+                    <div class="temperature">
+                        <span id="temp">--</span>°C
+                    </div>
+                    <div class="weather-icon">
+                        <img id="weatherIcon" src="" alt="날씨 아이콘" />
+                    </div>
+                </div>
+                
+                <div class="location">
+                    <h2 id="cityName">--</h2>
+                    <p id="country">--</p>
+                </div>
+                
+                <div class="weather-description">
+                    <p id="condition">--</p>
+                </div>
+            </div>
+            
+            <div class="weather-details">
+                <div class="detail-item">
+                    <span class="label">체감온도</span>
+                    <span id="feelsLike">--°C</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">습도</span>
+                    <span id="humidity">--%</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">바람</span>
+                    <span id="wind">-- km/h</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">가시거리</span>
+                    <span id="visibility">-- km</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">UV 지수</span>
+                    <span id="uv">--</span>
+                </div>
+                <div class="detail-item">
+                    <span class="label">기압</span>
+                    <span id="pressure">-- mb</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="error-message" id="errorMessage" style="display: none;">
+            <p>도시를 찾을 수 없습니다. 다시 시도해주세요.</p>
+        </div>
+        
+        <div class="loading" id="loading" style="display: none;">
+            <p>날씨 정보를 가져오는 중...</p>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
